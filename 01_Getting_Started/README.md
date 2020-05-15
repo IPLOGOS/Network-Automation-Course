@@ -85,7 +85,7 @@ ansible_user=admin
 ansible_password=cisco
 ```
 
-### Ansible Access Try
+### Ansible Access: Final Test
 ```console
 muse@ubuntu:~/BNAS/01_Getting_Started$ ansible all -i inventory -c network_cli -m cli_command -a "command='show version | inc up'"
 LAB-NAT | SUCCESS => {
