@@ -1,15 +1,16 @@
 # LAB SETUP
-My lab is fully virtualized using VMware Fusion Pro 11.5.3 on my powerful iMAC (MAC OS X Catalina w/ 32 GB RAM)
-2 VMs are set up:
-- VM EVE-NG PRO that hosts EVE-NG Professional version
-- VM MUSE that hosts my automation tools (Ansible, Git, etc.)
+My lab is fully virtualized using VMware Fusion Pro 11.5.3 on my powerful iMAC (MAC OS X Catalina w/ 32 GB RAM).
 
-A specific VMnet (vmnet10, subnet 10.0.0.0/24) also reserved for specific communications between these VMs.
+2 VMs are set up:
+- VM EVE-NG PRO that hosts EVE-NG Professional version;
+- VM MUSE that hosts my automation tools (Ansible, Git, etc.).
+
+A specific VMnet (vmnet10, subnet 10.0.0.0/24) is also reserved for specific communications between these VMs.
 
 ## EVE-NG PRO VM
 This VMs is a standard EVE-NG VM with 2 NICS:
-- NIC 1 is shared zith my iMAC
-- NIC 2 is tied to vmnet10
+- NIC 1 is shared with my iMAC,
+- NIC 2 is tied to vmnet10.
 
 ### EVE-NG lab
 | Node | Subtype | Management IPs |
@@ -18,21 +19,22 @@ This VMs is a standard EVE-NG VM with 2 NICS:
 | lab-dupl | Cisco IOS 7206VXR (Dynamips) |
 | lab_sw_1 | Cisco vIOS Switch | (N/A) |
 | lab_sw_2 | Cisco vIOS Switch | (N/A) |
+
 SSH is enabled and the username admin (password cisco} is defined on routers.
 
 
 #### LAB-NAT 
-| Interface | IP Address | Comment
+| Interface | IP Address | Comment |
 | --- | --- | --- |
 | Gi1 | 1.0.0.1/24 | connected to lab_sw_1
 | Gi2 | 22.0.0.1/24 | connected to lab_sw_2
 | Gi3 | 10.0.0.2/24 | connected to cloud interface (vmnet10)
 
 #### LAB-DUPL
-| Interface | IP Address |
-| --- | --- |
-| Fa0/0 | 22.0.0.22/24 | connected to lab_sw_2
-| Fa2/0 | 10.0.0.3/24 | connected to cloud interface (vmnet10)
+| Interface | IP Address | Comment |
+| --- | --- | --- |
+| Fa0/0 | 22.0.0.22/24 | connected to lab_sw_2 |
+| Fa2/0 | 10.0.0.3/24 | connected to cloud interface (vmnet10) |
 
 
 ## Automation Host VM
