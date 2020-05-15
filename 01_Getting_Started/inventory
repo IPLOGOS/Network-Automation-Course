@@ -1,0 +1,10 @@
+[lab]
+LAB-NAT ansible_host=10.0.0.2
+LAB-DUP ansible_host=10.0.0.3
+
+[lab:vars]
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_user=admin
+ansible_password=cisco
+
